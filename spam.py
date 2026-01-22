@@ -30,7 +30,7 @@ X_test_vectorized = vectorizer.transform(X_test)
 print("\nX_train_vectorized shape:", X_train_vectorized.shape)
 print("X_test_vectorized shape:", X_test_vectorized.shape)
 
-model = LogisticRegression(max_iter=1000)
+model = LogisticRegression(max_iter=1000, class_weight="balanced")
 model.fit(X_train_vectorized, y_train)
 
 y_pred = model.predict(X_test_vectorized)
